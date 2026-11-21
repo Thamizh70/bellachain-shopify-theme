@@ -1,0 +1,6 @@
+<header class="site-header"><div class="page-width header__inner">
+  <a class="brand" href="{{ routes.root_url }}"><span class="brand__gem">◇</span><span><strong>{{ shop.name | default: 'BellaChain' }}</strong><small>Shine Your Elegance</small></span></a>
+  <nav class="main-nav" aria-label="Main navigation"><a href="{{ routes.root_url }}">Home</a>{% for link in linklists.main-menu.links %}<a href="{{ link.url }}">{{ link.title }}</a>{% endfor %}<a href="/collections/all">Collections</a></nav>
+  <div class="header-actions"><a aria-label="Search" href="{{ routes.search_url }}">⌕</a><a aria-label="Wishlist" href="/pages/wishlist">♡</a><a aria-label="Cart" href="{{ routes.cart_url }}">🛍 <sup>{{ cart.item_count }}</sup></a><button class="menu-toggle" data-menu-toggle aria-label="Open menu">☰</button></div>
+</div></header>
+{% schema %}{"name":"Header","settings":[{"type":"link_list","id":"menu","label":"Menu","default":"main-menu"}],"presets":[{"name":"Header"}]}{% endschema %}
